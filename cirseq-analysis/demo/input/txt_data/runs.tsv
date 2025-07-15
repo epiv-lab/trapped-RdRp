@@ -1,0 +1,5 @@
+# <- this marks the line as comment and causes it to be ignored.
+# sample	replicate1	replicate2
+# values are tab separated. you can have as many replicates as you want and/or can afford to sequence :)
+NL-RETR	run1:barcode1	run2:barcode1
+NL-RKKR	run1:barcode2	run2:barcode2

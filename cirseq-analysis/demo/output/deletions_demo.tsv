@@ -1,0 +1,34 @@
+NL-RETR	1	run1	barcode1	1	141	A	fwd	unambiguous snd	1	0.10961306587745259
+NL-RETR	1	run1	barcode1	1	135	T	rev	ambiguous snd	1	0.10968520346605243
+NL-RETR	1	run1	barcode1	1	187	G	rev	unambiguous snd	1	0.42462845010615713
+NL-RETR	2	run2	barcode1	1	135	T	rev	ambiguous snd	2	0.221483942414175
+NL-RETR	2	run2	barcode1	1	141	A	fwd	unambiguous snd	2	0.2214103841470165
+NL-RETR	2	run2	barcode1	1	128	G	rev	unambiguous snd	1	0.11081560283687943
+NL-RETR	2	run2	barcode1	1	187	G	rev	unambiguous snd	1	0.41271151465125877
+NL-RKKR	1	run1	barcode2	18	146	TTTTTTTCTTTGAGGGAC	fwd	unambiguous	2	0.21372088053002777
+NL-RKKR	1	run1	barcode2	16	144	TTTTTTTCTTTGAGGG	fwd	unambiguous	1	0.10688328345446771
+NL-RKKR	1	run1	barcode2	11	126	TTTTTTTTCTT	rev	ambiguous	2	0.2143392991104919
+NL-RKKR	1	run1	barcode2	10	128	TTTTTTCTTT	rev	ambiguous	1	0.10712372790573112
+NL-RKKR	1	run1	barcode2	8	135	TTTTTTTT	fwd	unambiguous	1	0.10698619878035734
+NL-RKKR	1	run1	barcode2	3	133	TCT	rev	ambiguous	1	0.10708931248661384
+NL-RKKR	1	run1	barcode2	2	132	TT	rev	ambiguous	8	0.8566227647499732
+NL-RKKR	1	run1	barcode2	1	133	T	rev	ambiguous snd	95	10.173484686228313
+NL-RKKR	1	run1	barcode2	1	144	G	fwd	ambiguous snd	3	0.32064985036340315
+NL-RKKR	1	run1	barcode2	1	125	C	rev	unambiguous snd	2	0.21429336762027215
+NL-RKKR	1	run1	barcode2	1	135	T	rev	ambiguous snd	1	0.10698619878035734
+NL-RKKR	1	run1	barcode2	1	119	A	fwd	ambiguous snd	1	0.10718113612004286
+NL-RKKR	2	run2	barcode2	23	128	TTTTTTCTTTGAGGGACATTCCT	rev	ambiguous	1	0.10938525486764385
+NL-RKKR	2	run2	barcode2	18	146	TTTTTTTCTTTGAGGGAC	fwd	unambiguous	2	0.21774632553075668
+NL-RKKR	2	run2	barcode2	10	135	TCTTTTTTTT	fwd	unambiguous	1	0.10931351114997814
+NL-RKKR	2	run2	barcode2	4	133	TCTT	rev	ambiguous	2	0.21867483052700634
+NL-RKKR	2	run2	barcode2	4	124	TCTT	rev	ambiguous	1	0.109421162052741
+NL-RKKR	2	run2	barcode2	3	124	TCT	rev	ambiguous	1	0.109421162052741
+NL-RKKR	2	run2	barcode2	2	132	TT	rev	ambiguous	8	0.8747949699289229
+NL-RKKR	2	run2	barcode2	2	126	CT	fwd	ambiguous	2	0.2187705097352877
+NL-RKKR	2	run2	barcode2	2	133	TC	rev	ambiguous	1	0.10933741526350317
+NL-RKKR	2	run2	barcode2	1	133	T	rev	ambiguous snd	95	10.387054450032801
+NL-RKKR	2	run2	barcode2	1	144	G	fwd	ambiguous snd	3	0.32669062397909177
+NL-RKKR	2	run2	barcode2	1	125	C	rev	unambiguous snd	2	0.2187944426211574
+NL-RKKR	2	run2	barcode2	1	109	A	rev	unambiguous snd	1	0.11077877478675086
+NL-RKKR	2	run2	barcode2	1	164	C	fwd	unambiguous snd	1	0.10868383871318335
+NL-RKKR	2	run2	barcode2	1	187	G	rev	unambiguous snd	1	0.3971405877680699

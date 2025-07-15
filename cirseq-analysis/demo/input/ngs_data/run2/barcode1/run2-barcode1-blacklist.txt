@@ -1,0 +1,3 @@
+this file can contain any number of read IDs which will be skipped
+there is no comment system, but since these lines are not read IDs, they won't lead to anything being skipped
+the file can be empty, but it has to exist
