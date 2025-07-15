@@ -1,0 +1,214 @@
+<head>
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+   <meta name="author" content="Mathis Funk">
+   <meta name="description" content="slidingfold_output">
+
+   <!-- sidebar script and styling based on https://www.w3schools.com/howto/howto_js_collapse_sidebar.asp -->
+   <!-- if you dig this far in, please be indulgent, this is my second ever try at html/css/javascript :) -->
+
+   <style>
+        /* Set height of body and the document to 100% to fill the screen with the graphs */
+        body, html {
+            height: 100%;
+            width:100%;
+            margin: 0;
+            font-family: Arial;
+            }
+
+        .hometext{
+            width:60%;
+            margin:auto;
+            text-align: justify;
+            text-justify: inter-word;
+            }
+
+        /* style nts sequences */
+        .sequence {
+            font-family: 'Courier New', Courier, monospace;
+        }
+
+         /* The sidebar menu */
+        .sidebar {
+          height: 100%; /* 100% Full-height */
+          width: 0; /* 0 width - change this with JavaScript */
+          position: fixed; /* Stay in place */
+          z-index: 2; /* Stay on top */
+          top: 0;
+          left: 0;
+          background-color: #111; /* Black*/
+          overflow-x: hidden; /* Disable horizontal scroll */
+        transition: 0.1s; /* 0.5 second transition effect to slide in the sidebar */
+        }
+
+        /* The sidebar links */
+        .sidebar a {
+          padding: 8px 8px 8px 8px;
+          text-decoration: none;
+          font-size: 12px;
+          color: #818181;
+          display: inline-block;
+          transition: 0.3s;
+        }
+
+        /* When you mouse over the navigation links, change their color */
+        .sidebar a:hover {
+          color: #f1f1f1;
+        }
+
+        /* Position and style the close button (top right corner) */
+        .sidebar .closebtn {
+          position: absolute;
+          top: 0;
+          right: 25px;
+          font-size: 36px;
+          margin-left: 50px;
+        }
+
+        /* The button used to open the sidebar */
+        .openbtn {
+          font-size: 20px;
+          cursor: pointer;
+          background-color: #111;
+          color: white;
+          padding: 10px 15px;
+          border: none;
+          position: fixed;
+          top: 0;
+          z-index: 1;
+        }
+
+        .openbtn:hover {
+          background-color: #444;
+        }
+
+        .togglediv {
+            visibility: 'visible;';
+        }
+
+        /* the buttons used to show/hide all toggledivs */
+        .allbutton {
+          background-color: #111;
+          cursor: pointer;
+          border: #818181;
+          color: #818181;
+          text-align: center;
+          display: inline-block;
+          font-size: 16px;
+          width: 150px;
+          margin-top: 20px;
+        }
+
+        .allbutton:hover {
+          color: #f1f1f1;
+        }
+
+        /* style the table */
+        tr:hover {
+        background-color: #7BAFDE;
+        }
+        tr {
+            text-align: center;
+            border: none;
+        }
+        table { 
+            border-collapse: collapse; 
+        }
+        th {
+        padding: 10px;
+        }
+
+</style>
+</head>
+
+<body>
+
+<!-- navbar -->
+<div id="sidebarstuff">
+<div id="mySidebar" class="sidebar">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+    <input type='button' class="allbutton" value='hide all' checked>
+    <input type='button' class="allbutton" value='show all' checked>
+    <br>
+    <label class='inline_checkbox'>
+             <input type='checkbox' id='hometext_cb' class='hometext_cb' value='hometext' checked><label for='hometext_cb' style='display: inline-block;'><a href='#hometext' onclick="toggleOn('hometext')">parameters</a></label>
+    </label>
+    <br>
+ 	{% for figname in figs.keys() %}
+      <label class='inline_checkbox'>
+          <input type='checkbox' id='{{figname}}_cb' class='{{figname}}_cb' value='{{figname}}' checked>
+          <label for='{{figname}}_cb' style='display: inline-block;'>
+              <a href='#{{figname}}' onclick="toggleOn('{{figname}}')">{{figname}}</a>
+          </label>
+      </label>
+      <br>
+ 	{% endfor %}
+</div>
+	<button class="openbtn" onclick="openNav()">☰ Go To...</button> 
+</div>
+
+<div id="main" class="main">	
+<!-- text of the homepage -->
+    <div id="hometext" class='hometext togglediv'>
+    {% for param in params %}
+        {{param}}<br>
+    {% endfor %}   
+    </div>
+
+{# Now to add the graphs #}
+{% for figname, fig in figs.items() %}
+    <div id="{{figname}}" class='{{figname}} togglediv', style="height: 50%;">
+    {{fig}}
+    </div>
+{% endfor %}
+
+</div>
+
+<script>
+    /* Set the width of the sidebar to 250px and the left margin of the page content to 250px */
+function openNav() {
+  document.getElementById("mySidebar").style.width = "400px";
+  // document.getElementById("main").style.marginLeft = "400px";
+}
+
+/* Set the width of the sidebar to 0 and the left margin of the page content to 0 */
+function closeNav() {
+  document.getElementById("mySidebar").style.width = "0";
+  // document.getElementById("main").style.marginLeft = "0";
+} 
+
+function toggleOn(div_id) {
+    $('.'+div_id).toggle(true);
+    $('.'+div_id+'_cb').prop('checked', true);
+}
+
+/* Close sidebar if clicking anywhere outside of the sidebarstuff div */
+document.addEventListener('click', function(event) {
+  if (!sidebarstuff.contains(event.target))
+    closeNav();
+});
+
+$(document).ready(function() {
+    $('input[type="checkbox"]').click(function() {
+        var inputValue = $(this).attr("value");
+        $("." + inputValue).toggle();
+    });
+});
+
+$(document).ready(function() {
+    $('input[type="button"]').click(function() {
+        
+        // var inputValue = $(this).attr("value");
+        // $("." + inputValue).toggle(false);
+        if ($(this).attr("value")=='show all') {
+            $('input:checkbox').not(this).prop('checked', true);
+            $(".togglediv").toggle(true);
+        } else if ($(this).attr("value")=='hide all') {
+            $('input:checkbox').not(this).prop('checked', false);
+            $(".togglediv").toggle(false);
+        }
+
+    });
+});
+</script>
+</body>
