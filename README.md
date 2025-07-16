@@ -1,5 +1,7 @@
 # The trapped-RdRp model
 
+For archived published version, see: [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.15926729.svg)](https://doi.org/10.5281/zenodo.15926729)
+
 Trapping of the influenza virus RNA-dependent RNA polymerase (RdRp) as the molecular mechanism underlying recurrent insertions in influenza virus genomes was proposed in [Gultyaev et al 2019](https://academic.oup.com/ve/article/doi/10.1093/ve/vez034/5552811)[^1]. The model states that insertion hotspots can occur when transient RNA structures form around the influenza virus RdRp during replication of insertion-prone sequences. The physical constraint on the RdRp leads to an increase in error rates. Insertion hotspots therefore result from a synergistic combination of error-prone RNA sequences and error-enhancing RNA structures.
 
 This repository is intended to regroup scripts written to support study of the formation of RdRp-trapping RNA structures and their impact on RdRp errors during influenza genome replication in the workgroup of [Mathilde Richard](https://www.erasmusmc.nl/en/research/researchers/richard-mathilde).
